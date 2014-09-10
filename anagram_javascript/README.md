@@ -11,7 +11,7 @@ Given `"listen"` and a list of candidates like `"enlists" "google"
 Execute the tests with:
 
 ```bash
-$ jasmine-node bob_test.spec.js
+$ jasmine-node anagram_test.spec.js
 ```
 
 All but the first test have been skipped.
