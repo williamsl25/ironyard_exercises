@@ -35,3 +35,10 @@ Come to the lecture 9/19 ready to discuss the following questions.
 ## Feedback/Questions
 
 Open a github issue. I'll gladly answer any questions.
+
+## Credits
+
+Both problems take from [exercism.io](http://exercism.io) but problems
+in that application are served rather than picked so this just uses a
+problem that is solved in roughly equal terms in several languages. 
+
