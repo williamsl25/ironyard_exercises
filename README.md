@@ -2,6 +2,11 @@
 
 Homework for Jed's lecture on [CoffeeScript](http://coffeescript.org)
 
+In order to understand how CoffeeScript fits into the web development
+space, its important to understand what need it solves. We'll do that by
+comparing solutions to a relatively simple programming problem in two
+languages you already know (I think).
+
 ## How To
 
 - solve the problem in Ruby (you need MiniTest installed `gem install
@@ -14,8 +19,19 @@ Homework for Jed's lecture on [CoffeeScript](http://coffeescript.org)
   - to the best of your ability without dependencies
   - with [Underscore](http://underscorejs.org) as a utility library
 
-## Questions
+Yes, you may work in groups. No the homework is not graded, but you
+won't get much out of the lecture if you have not done this prep and
+that would be a waste of time for me and you. If you work with others,
+be sure you understand the language decisions made.
+
+## Discussion
+
+Come to the lecture 9/19 ready to discuss the following questions.
 
 - What solution in Ruby do you like best? Why?
 - Are there patterns from your Ruby solutions that lend themselves to JavaScript solutions?
 - Are there conveniences in Ruby you wish you had in JavaScript? Why?
+
+## Feedback/Questions
+
+Open a github issue. I'll gladly answer any questions.
