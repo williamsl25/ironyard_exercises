@@ -5,14 +5,18 @@ function anagram( match ){
   return { matches: matches }
 
   function matches(arr) {
-    var arr = ( (arr instanceof Array) ? arr : _toArray(arguments) )
-    return arr.map( toSubject ).filter( duplicates ).map( identity )
+    arr = ( (arr instanceof Array) ? arr : _toArray(arguments) )
+    return arr.map( toSubject )
+              .filter( uniq )
+              .filter( isMatch )
+              .map( fromSubject )
   }
 
   // helpers
-  function identity( word )   { return word.identity() }
-  function toSubject( word )  { return anagramSubject(word) }
-  function duplicates( word ) { return _match.duplicate(word) === true }
+  function uniq( word )         { return !_match.sameWord( word ) }
+  function isMatch( word )      { return _match.isMatch( word ) }
+  function toSubject( word )    { return anagramSubject( word ) }
+  function fromSubject( word )  { return word.original() }
 }
 
 module.exports = anagram
@@ -22,14 +26,14 @@ function anagramSubject( word ){
 
   return {
     fingerprint: canonicalize( word ),
+
     lowerCased: word.toLowerCase(),
 
-    duplicate: function( otherWord ){
-      if ( this.sameWord( otherWord ) ) { return false }
-      else { return this.fingerprint === otherWord.fingerprint }
+    isMatch: function( otherWord ){
+      return this.fingerprint === otherWord.fingerprint
     },
 
-    identity: function(){ return word },
+    original: function(){ return word },
 
     sameWord: function( otherWord ){
       return this.lowerCased === otherWord.lowerCased
@@ -44,4 +48,5 @@ function anagramSubject( word ){
 function _toArray(args){
   return Array.prototype.slice.call(args)
 }
+
 
