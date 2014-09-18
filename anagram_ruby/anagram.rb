@@ -69,14 +69,13 @@ end
 class Anagram
   def initialize(word)
     @word = word
-    @fingerprint = fingerprint(word)
   end
 
   def match(arr)
     arr.inject({}, &to_hash)
        .reject(&duplicates)
        .select(&fingerprints)
-       .map(&identity)
+       .map(&from_hash)
   end
 
   def fingerprint(word)
@@ -105,7 +104,7 @@ class Anagram
     ->(key, value) { value[:matcher] == value[:fingerprint] }
   end
 
-  def identity
+  def from_hash
     ->((key, value)) { key }
   end
 
