@@ -6,9 +6,11 @@ class AnagramSubject
     # now it is, so we need store a copy of the original word to recall later
     @original = word
 
+
   fingerprint: ->
     # memoize this computation for efficiency
     @_fingerprint ?= @word.split('').sort('').join('')
+
 
   isEqual: (anotherWord)->
     # return false immediately if the words are the same
@@ -24,8 +26,14 @@ class Anagram
   # are inside the instance but are 'private' to users outside the class.
   # One of the few privacy techniques in JavaScript
 
+
   # a function that returns a new instance of the AnagramSubject class
   toSubject = ( str )-> new AnagramSubject( str )
+
+
+  # returns the original copy of the word
+  fromSubject = ( anagramSubject )-> anagramSubject.original
+
 
   # a partially applied function that _returns_ a new function
   # configured for the instance. This is necessary here because this
@@ -37,8 +45,10 @@ class Anagram
   matches = ( anagramSubject )->
     ( otherWord )-> anagramSubject.isEqual( otherWord )
 
+
   constructor: ( word )->
     @anagramSubject = new AnagramSubject( word )
+
 
   match: ( strings... )->
     # there are a couple other ways to do this but there is
@@ -52,9 +62,6 @@ class Anagram
     # matcher is a function waiting to be called with
     # each word passed to it from filter
     matcher = matches( @anagramSubject )
-
-    # returns the original copy of the word
-    fromSubject = ( anagramSubject )-> anagramSubject.original
 
     # apply toSubject to all the words, find the ones that match
     # via our matcher function and then get the original version of the
@@ -75,8 +82,10 @@ class AnagramSubject
   constructor: (word)->
     @word = word.toLowerCase()
 
+
   fingerprint: ->
     @_fingerprint ?= @word.split('').sort('').join('')
+
 
   isEqual: (string)->
     anotherWord = new AnagramSubject(string)
@@ -86,17 +95,19 @@ class AnagramSubject
 
 class Anagram
 
+
   matches = ( anagramSubject )->
     ( string )-> anagramSubject.isEqual( string )
 
+
   constructor: ( word )->
     @anagramSubject = new AnagramSubject( word )
+
 
   match: ( strings... )->
     strings = Array::concat.apply( [], strings )
     matcher = matches( @anagramSubject )
     strings.filter( matcher )
-
 
 
 module.exports = Anagram
