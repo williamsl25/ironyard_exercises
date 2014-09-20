@@ -1,5 +1,5 @@
 class AnagramSubject
-  constructor: (word)->
+  constructor: ( word )->
     @word = word.toLowerCase()
     # the spec was not checking for case insensitivity of anagrams
     # aka the 'Orchestra' -> 'Carthorse' problem
@@ -12,7 +12,7 @@ class AnagramSubject
     @_fingerprint ?= @word.split('').sort('').join('')
 
 
-  isEqual: (anotherWord)->
+  isEqual: ( anotherWord )->
     # return false immediately if the words are the same
     return false if @word == anotherWord.word
 
@@ -79,7 +79,8 @@ class Anagram
 # - it is always nicer for comparisons to compare two equal things
 # ultimately this is a personal judgment call
 class AnagramSubject
-  constructor: (word)->
+
+  constructor: ( word )->
     @word = word.toLowerCase()
 
 
@@ -88,13 +89,11 @@ class AnagramSubject
 
 
   isEqual: (string)->
-    anotherWord = new AnagramSubject(string)
+    anotherWord = new AnagramSubject( string )
     return false if @word == anotherWord.word
-
     @fingerprint() == anotherWord.fingerprint()
 
 class Anagram
-
 
   matches = ( anagramSubject )->
     ( string )-> anagramSubject.isEqual( string )
