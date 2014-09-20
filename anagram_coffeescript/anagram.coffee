@@ -70,6 +70,8 @@ class Anagram
     # `@` aka `@toSubject`
     strings.map( toSubject ).filter( matcher ).map( fromSubject )
 
+
+# --------------------------------------------------------------------------
 # an alternative (maybe better) implementation
 # by passing a string to the comparison, and creating
 # the comparison object inside the isEqual method we:
