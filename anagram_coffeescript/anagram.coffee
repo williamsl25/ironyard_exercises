@@ -90,7 +90,7 @@ class AnagramSubject
     @_fingerprint ?= @word.split('').sort('').join('')
 
 
-  isEqual: (string)->
+  isEqual: ( string )->
     anotherWord = new AnagramSubject( string )
     return false if @word == anotherWord.word
     @fingerprint() == anotherWord.fingerprint()
