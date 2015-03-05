@@ -18,7 +18,7 @@ It turns out that Ruby can be more functional (like LISP) [than you might think
   - in a functional fashion (hint: use the `Eunumerable` module)
   - in an object oriented fashion
 
-- solve the problem in JavaScript (uses the jasmine-node testing framework)
+- solve the problem in JavaScript (uses the jasmine-node testing framework—see [Running JS Tests](#running-js-tests) below)
   - to the best of your ability without dependencies
   - with [Underscore](http://underscorejs.org) as a utility library
 
@@ -31,6 +31,14 @@ Yes, you may work in groups. No the homework is not graded, but you
 won't get much out of the lecture if you have not done this prep and
 that would be a waste of time for me and you. If you work with others,
 be sure you understand the language decisions made.
+
+## Running JS Tests
+
+1. If you don't have npm installed, run `$ brew install npm`.
+2. Install jasmine-node.  To install it globally, run `$ npm install -g jasmine-node`.
+3. To run the tests:
+  - From inside anagram_javascript, run `$ jasmine-node .`
+  - From inside anagram_coffeescript, run `$ jasmine-node . --coffee`.
 
 ## Discussion
 
