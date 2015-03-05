@@ -18,7 +18,7 @@ It turns out that Ruby can be more functional (like LISP) [than you might think
   - in a functional fashion (hint: use the `Eunumerable` module)
   - in an object oriented fashion
 
-- solve the problem in JavaScript (uses the jasmine-node testing framework—see [Running JS Tests](#Running-JS-Tests) below)
+- solve the problem in JavaScript (uses the jasmine-node testing framework—see [Running JS Tests](#running-js-tests) below)
   - to the best of your ability without dependencies
   - with [Underscore](http://underscorejs.org) as a utility library
 
