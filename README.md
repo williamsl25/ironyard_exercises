@@ -1,13 +1,16 @@
 # Ironyard Exercises
 
-Homework for Jed's lecture on [CoffeeScript](http://coffeescript.org)
-
-In order to understand how CoffeeScript fits into the web development
-space, its important to understand what need it solves. We'll do that by
-comparing solutions to a relatively simple programming problem in two
-languages you already know (I think).
+Homework for Jed's lecture on Functional Programming
 
 ## How To
+
+Functional Programming is a different way of thinking than Procedural or
+Object Oriented programming. Spend some time learning how these three
+styles differ (wikipedia might be a great start) and do your best to try
+to implement these as described below.
+
+It turns out that Ruby can be more functional (like LISP) [than you might think
+](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/179642).
 
 - solve the problem in Ruby (you need MiniTest installed `gem install
   minitest`)
@@ -15,9 +18,14 @@ languages you already know (I think).
   - in a functional fashion (hint: use the `Eunumerable` module)
   - in an object oriented fashion
 
-- solve the problem in JavaScript 
+- solve the problem in JavaScript (uses the jasmine-node testing framework)
   - to the best of your ability without dependencies
   - with [Underscore](http://underscorejs.org) as a utility library
+
+Solutions have been given, but it doesn't mean they are the best
+solutions. My advice is to delete the file contents and work your way
+through the problems yourselves. (I hear Nick is giving creativity
+points.)
 
 Yes, you may work in groups. No the homework is not graded, but you
 won't get much out of the lecture if you have not done this prep and
