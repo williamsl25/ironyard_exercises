@@ -31,6 +31,7 @@ example API might look like:
 ```javascript
 array1IsEqualTo(array2) // false
 array2IsEqualTo(array3) // true
+array2IsEqualTo(array1) // true
 ```
 
 Write this program in less than five lines of (readable, less than 80 columns wide) code with underscore as
