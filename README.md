@@ -1,6 +1,46 @@
 # Ironyard Exercises
 
-Homework for Jed's lecture on Functional Programming
+## EXTRA CREDIT (added 3/5/15)
+
+In JavaScript, given a set of arrays, write a program that will tell me
+which arrays contain all the members of the other array:
+
+```javascript
+var array1 = [
+  { name: 'John', age: 25},
+  { name: 'Jane', age: 58},
+  { name: 'Josh', age: 12}
+]
+
+var array2 = [
+  { name: 'Jane', age: 58},
+  { name: 'John', age: 25}
+]
+
+var array3 = [
+  { name: 'John', age: 25},
+  { name: 'Jane', age: 58}           
+]
+```
+
+In this case array2 and array3 are the same but in a different order,
+but array1 is not fully contained within array2 (missing Josh). An
+example API might look like:
+
+
+```javascript
+array1IsEqualTo(array2) // false
+array2IsEqualTo(array3) // true
+```
+
+Write this program in less than five lines of (readable, less than 80 columns wide) code with underscore as
+the only dependency and I will buy you lunch (limit 2 first successful attempts). While the main assignment is intended to be done in groups,
+this is a solo effort and I will ask for your answers on Tuesday.
+Thanks! See you then.
+
+---
+
+# Homework for Jed's lecture on Functional Programming
 
 ## How To
 
