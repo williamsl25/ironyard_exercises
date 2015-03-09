@@ -19,93 +19,19 @@ class Anagram
   end
 end
 
-# OO version
-class Anagram
-
-  def initialize(word)
-    @word = AnagramSubject.new(word)
-  end
-
-  def match(arr)
-    arr.select {|word| @word.anagram_of?(word) }
-  end
-end
-
-class AnagramSubject
-  attr_reader :word
-
-  def initialize(word)
-    @word = word.downcase
-  end
-
-  def anagram_of?(word)
-    subject = klass.new(word)
-    return false if duplicate?(subject)
-    fingerprint == subject.fingerprint
-  end
-
-  def fingerprint
-    @fingerprint ||= canonicalize(@word)
-  end
-
-  private
-
-  def duplicate?(subject)
-    @word == subject.word
-  end
-
-  def canonicalize(word)
-    word.chars.sort
-  end
-
-  def klass
-    self.class
-  end
-
-end
-
-# functional
+# Imperative
 #
 class Anagram
-  def initialize(word)
-    @word = word
+  attr_accessor :word
+# Return an array of matching anagrams. If no match can be found,
+# return an emtpy array.
+  def initialize (string)
+    self.word = string.downcase
   end
-
-  def match(arr)
-    arr.inject({}, &to_hash)
-       .reject(&duplicates)
-       .select(&fingerprints)
-       .map(&from_hash)
+# a term is an anagram if the sum of the character codes are equal to the sum of the character codes of the target string
+  def match choice
+    choice.select { |entry| entry if entry.downcase.split(//).sort == self.word.downcase.split(//).sort && entry.downcase != self.word.downcase} 
   end
-
-  def fingerprint(word)
-    word.downcase.chars.sort
-  end
-
-  def to_hash
-    matcher = fingerprint(@word)
-
-    ->(memo, word) {
-      obj = {
-        fingerprint: fingerprint(word),
-        matcher: matcher
-      }
-      memo[word] = obj
-      memo
-    }
-  end
-
-  def duplicates
-    downcased = @word.downcase
-    ->(key, value) { downcased == key.downcase }
-  end
-
-  def fingerprints
-    ->(key, value) { value[:matcher] == value[:fingerprint] }
-  end
-
-  def from_hash
-    ->((key, value)) { key }
-  end
-
 end
+
+  
